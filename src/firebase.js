@@ -1,13 +1,18 @@
 import firebase from "firebase";
+import dotenv from 'dotenv'
+dotenv.config()
+
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyBYsghOwIBIzL9lFaeBPmwtnlsF4LuJa8E",
-  authDomain: "facebook-messenger-clone-byme.firebaseapp.com",
-  databaseURL: "https://facebook-messenger-clone-byme.firebaseio.com",
-  projectId: "facebook-messenger-clone-byme",
-  storageBucket: "facebook-messenger-clone-byme.appspot.com",
-  messagingSenderId: "658455402259",
-  appId: "1:658455402259:web:aa8ac13e88d1c9f1872ce6",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 });
+console.log("The app ", firebaseApp)
+console.log("Process ", process.env)
 
 const db = firebaseApp.firestore();
 
