@@ -11,9 +11,6 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
 });
-console.log("The app ", firebaseApp)
-console.log("Process ", process.env)
-
 const db = firebaseApp.firestore();
 
 export default db;
